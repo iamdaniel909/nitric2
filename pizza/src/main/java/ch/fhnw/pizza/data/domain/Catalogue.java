@@ -9,14 +9,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Menu {
+public class Catalogue {
 
     @Id
     @JsonIgnore
     private Long id;
 
-    @OneToMany(mappedBy = "menu")
-    private List<Pizza> pizzaList;
+    @OneToMany(mappedBy = "catalogue")
+    private List<Product> productList;
 
     private String currentOffer;
 
@@ -28,12 +28,12 @@ public class Menu {
         this.id = id;
     }
 
-    public List<Pizza> getPizzaList() {
-        return pizzaList;
+    public List<Product> getProductList() {
+        return productList;
     }
 
-    public void setPizzaList(List<Pizza> pizzaList) {
-        this.pizzaList = pizzaList;
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 
     public String getCurrentOffer() {
