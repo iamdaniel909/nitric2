@@ -27,6 +27,9 @@ public class Product {
     @Column(name = "product_group")
     private String productGroup;
 
+    @Column(name = "product_description")
+    private String productDescription;
+
     @ManyToOne
     private Catalogue catalogue;
 
@@ -61,6 +64,14 @@ public class Product {
 
     public void setProductGroup(String productGroup) {
         this.productGroup = productGroup;
+    }
+
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
 }
