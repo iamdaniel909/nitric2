@@ -1,8 +1,8 @@
 package ch.fhnw.pizza.controller;
 
-import ch.fhnw.pizza.business.service.MenuService;
-import ch.fhnw.pizza.data.domain.Menu;
-import ch.fhnw.pizza.data.domain.Pizza;
+import ch.fhnw.pizza.business.service.CatalogueService;
+import ch.fhnw.pizza.data.domain.Catalogue;
+import ch.fhnw.pizza.data.domain.Product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
