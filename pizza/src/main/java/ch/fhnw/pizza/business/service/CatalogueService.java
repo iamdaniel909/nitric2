@@ -47,13 +47,13 @@ public class CatalogueService {
             currentOffer = "25% discount on all brooms";
     }
 
-    public Menu getCatalogueByHouse(String house) {
+    public Catalogue getCatalogueByHouse(String house) {
         String currentOffer = getCurrentOffer(house);
         List<Product> productList = getAllProducts();
         Catalogue catalogue = new Catalogue();
         catalogue.setProductList(productList);
         catalogue.setCurrentOffer(currentOffer);
-        return Catalogue;
+        return catalogue;
     }
 
     

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.fhnw.pizza.business.service.CatalogueService;
 import ch.fhnw.pizza.data.domain.Catalogue;
-import ch.fhnw.pizza.data.domain.Pizza;
 import ch.fhnw.pizza.data.domain.Product;
 import jakarta.annotation.PostConstruct;
 
@@ -41,7 +40,7 @@ public class PizzaApplication {
 
 		product = new Product();
 		product.setProductName("Phoenix Wand");
-		pizza.setProductPrice(500);
+		product.setProductPrice(500);
 		catalogueService.addProduct(product);
 		
 	}
