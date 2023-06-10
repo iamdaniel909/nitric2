@@ -12,6 +12,5 @@ import ch.fhnw.pizza.data.domain.Product;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     Product findByProductName(String productName);
     Product findByProductId(Long productId);
-    List<Product> findByNameContaining(String name);
-    List<Product> findByDescriptionContaining(String description);
+    List<Product> findAll();
 }
