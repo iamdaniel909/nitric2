@@ -14,47 +14,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="/menu")
-public class MenuController {
+@RequestMapping(path="/catalogue")
+public class CatalogueController {
 
     @Autowired
-    private MenuService menuService;
+    private CatalogueService catalogueService;
 
-    @GetMapping(path="/pizza/{id}", produces = "application/json")
-    public ResponseEntity getPizza(@PathVariable("id") Long id) {
+    @GetMapping(path="/product/{id}", produces = "application/json")
+    public ResponseEntity getProduct(@PathVariable("id") Long id) {
         try{
-            Pizza pizza = menuService.findPizzaById(id);
-            return ResponseEntity.ok(pizza);
+            Product product = catalogueService.findProductById(id);
+            return ResponseEntity.ok(product);
         }
         catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
 
-    @GetMapping(path="/pizza", produces = "application/json")
-    public List<Pizza> getPizzaList() {
-        List<Pizza> pizzaList = menuService.getAllPizzas();
+    @GetMapping(path="/product", produces = "application/json")
+    public List<Product> getProuctList() {
+        List<Product> productList = catalogueService.getAllProducts();
 
-        return pizzaList;
+        return productList;
     }
 
-    @PostMapping(path="/pizza", consumes="application/json", produces = "application/json")
-    public ResponseEntity addPizza(@RequestBody Pizza pizza) {
+    @PostMapping(path="/product", consumes="application/json", produces = "application/json")
+    public ResponseEntity addProduct(@RequestBody Product product) {
         try{
-            pizza = menuService.addPizza(pizza);
+            product = catalogueService.addProduct(product);
             
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
 
         }
-        return ResponseEntity.ok(pizza);
+        return ResponseEntity.ok(product);
         
     }
 
     @GetMapping(path="", produces = "application/json")
-    public Menu getMenu(@RequestParam(value="location") String location) {
+    public Catalogue getCatalogue(@RequestParam(value="location") String location) {
 
-        return menuService.getMenuByLocation(location);
+        return catalogueService.getCatalogueByLocation(location);
     }
     
 }
