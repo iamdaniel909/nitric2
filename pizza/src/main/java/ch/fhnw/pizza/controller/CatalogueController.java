@@ -21,7 +21,7 @@ public class CatalogueController {
     private CatalogueService catalogueService;
 
     @GetMapping(path="/product/{id}", produces = "application/json")
-    public ResponseEntity getProduct(@PathVariable("id") Long id) {
+    public ResponseEntity<Product> getProduct(@PathVariable("id") Long id) {
         try{
             Product product = catalogueService.findProductById(id);
             return ResponseEntity.ok(product);
