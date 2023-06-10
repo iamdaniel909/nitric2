@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.fhnw.pizza.business.service.CatalogueService;
-import ch.fhnw.pizza.data.domain.Catalogue;
 import ch.fhnw.pizza.data.domain.Product;
 import jakarta.annotation.PostConstruct;
 
