@@ -6,8 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ch.fhnw.pizza.business.service.MenuService;
+import ch.fhnw.pizza.business.service.CatalogueService;
+import ch.fhnw.pizza.data.domain.Catalogue;
 import ch.fhnw.pizza.data.domain.Pizza;
+import ch.fhnw.pizza.data.domain.Product;
 import jakarta.annotation.PostConstruct;
 
 @SpringBootApplication
@@ -15,7 +17,7 @@ import jakarta.annotation.PostConstruct;
 public class PizzaApplication {
 
 	@Autowired
-	private MenuService menuService;
+	private ControllerService controllerService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(PizzaApplication.class, args);
@@ -24,7 +26,7 @@ public class PizzaApplication {
 	@GetMapping(value="/")
     public String getWelcomeString() {
         
-        return "Pizza Takeaway Service, welcome!";
+        return "Ye ole broom shoppe, welcome!";
     } 
 
 	// Use this method to initialize placeholder data without using Postman
@@ -32,15 +34,15 @@ public class PizzaApplication {
 	// To resolve the error, delete the file and restart the application
 	@PostConstruct
 	private void initPlaceholderData() throws Exception {
-		Pizza pizza = new Pizza();
-		pizza.setPizzaName("Margherita");
-		pizza.setPizzaToppings("Tomato sauce, mozzarella, basil");
-		menuService.addPizza(pizza);
+		Product product = new Product();
+		product.setProductName("Unicorn Hair Wand");
+		product.setProductPrice(99);
+		catalogueService.addProduct(product);
 
-		pizza = new Pizza();
-		pizza.setPizzaName("Funghi");
-		pizza.setPizzaToppings("Tomato sauce, mozzarella, mushrooms");
-		menuService.addPizza(pizza);
+		product = new Product();
+		product.setProductName("Phoenix Wand");
+		pizza.setProductPrice(500);
+		catalogueService.addProduct(product);
 		
 	}
 
