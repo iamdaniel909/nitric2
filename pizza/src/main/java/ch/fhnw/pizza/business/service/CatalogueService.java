@@ -45,6 +45,7 @@ public class CatalogueService {
             currentOffer = "20% discount on all brooms";
         else if("Ravenclaw".equalsIgnoreCase(house))
             currentOffer = "25% discount on all brooms";
+        return currentOffer;
     }
 
     public Catalogue getCatalogueByHouse(String house) {

@@ -52,9 +52,9 @@ public class CatalogueController {
     }
 
     @GetMapping(path="", produces = "application/json")
-    public Catalogue getCatalogue(@RequestParam(value="location") String location) {
+    public Catalogue getCatalogue(@RequestParam(value="house") String house) {
 
-        return catalogueService.getCatalogueByLocation(location);
+        return catalogueService.getCatalogueByHouse(house);
     }
     
 }
