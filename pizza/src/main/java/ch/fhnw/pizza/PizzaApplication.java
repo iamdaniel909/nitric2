@@ -16,8 +16,8 @@ import jakarta.annotation.PostConstruct;
 public class PizzaApplication {
 
 	@Autowired
-	private ControllerService controllerService;
-
+	private CatalogueService catalogueService;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(PizzaApplication.class, args);
 	}
